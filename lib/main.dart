@@ -13,12 +13,9 @@ class Myapp extends StatelessWidget {
           title: Text("covid scanner"),
         ),
         body: Center(
-          child: Text(
-            "hello",
-            style: TextStyle(
-              fontSize: 30,
-              color: Colors.purple,
-            ),
+          child: Image(
+            image: NetworkImage(
+                "https://static.wixstatic.com/media/dbcf41_9d84f4b38dae41e6a92dbd8330998b43~mv2.png/v1/fit/w_800%2Ch_800%2Cal_c/file.png"),
           ),
         ),
       ),
