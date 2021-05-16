@@ -8,12 +8,26 @@ class Myapp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("covid scanner"),
-        ),
-        body: Center(
-            child: Column(
+      home: Myhomepage(),
+      theme: ThemeData(primarySwatch: Colors.green),
+    );
+  }
+}
+
+class Myhomepage extends StatefulWidget {
+  @override
+  _MyhomepageState createState() => _MyhomepageState();
+}
+
+class _MyhomepageState extends State<Myhomepage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("covid scanner"),
+      ),
+      body: Center(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image(
@@ -35,9 +49,8 @@ class Myapp extends StatelessWidget {
               ),
             ),
           ],
-        )),
+        ),
       ),
-      theme: ThemeData(primarySwatch: Colors.green),
     );
   }
 }
