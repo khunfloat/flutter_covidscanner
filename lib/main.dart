@@ -12,7 +12,15 @@ class Myapp extends StatelessWidget {
         appBar: AppBar(
           title: Text("covid scanner"),
         ),
-        body: Text("hello"),
+        body: Center(
+          child: Text(
+            "hello",
+            style: TextStyle(
+              fontSize: 30,
+              color: Colors.purple,
+            ),
+          ),
+        ),
       ),
       theme: ThemeData(primarySwatch: Colors.green),
     );
