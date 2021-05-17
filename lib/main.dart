@@ -20,6 +20,8 @@ class Myhomepage extends StatefulWidget {
 }
 
 class _MyhomepageState extends State<Myhomepage> {
+  int number = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,9 +32,15 @@ class _MyhomepageState extends State<Myhomepage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Text(number.toString(),
+                style: TextStyle(
+                  fontSize: 30,
+                  color: Colors.black,
+                )),
             Image(
               image: NetworkImage(
-                  "https://static.wixstatic.com/media/dbcf41_9d84f4b38dae41e6a92dbd8330998b43~mv2.png/v1/fit/w_800%2Ch_800%2Cal_c/file.png"),
+                "https://static.wixstatic.com/media/dbcf41_9d84f4b38dae41e6a92dbd8330998b43~mv2.png/v1/fit/w_800%2Ch_800%2Cal_c/file.png",
+              ),
             ),
             Text(
               "What is the cat?",
@@ -51,6 +59,17 @@ class _MyhomepageState extends State<Myhomepage> {
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+          onPressed: addNumber,
+          child: Icon(
+            Icons.add,
+          )),
     );
+  }
+
+  void addNumber() {
+    setState(() {
+      number++;
+    });
   }
 }
