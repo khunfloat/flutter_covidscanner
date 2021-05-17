@@ -43,27 +43,19 @@ class _MyhomepageState extends State<Myhomepage> {
         ),
       ),
     );
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("covid scanner"),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: data,
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-          onPressed: addNumber,
-          child: Icon(
-            Icons.add,
-          )),
-    );
-  }
 
-  void addNumber() {
-    setState(() {
-      number++;
-    });
+    for (var i = 1; i < 30; i++) {
+      data.add(
+          Text("order $i", style: TextStyle(fontSize: 30, color: Colors.red)));
+    }
+
+    return Scaffold(
+        appBar: AppBar(
+          title: Text("covid scanner"),
+        ),
+        body: ListView.builder(itemBuilder: (BuildContext context, int index) {
+          return ListTile(
+              title: Text("Roommania $index"), subtitle: Text("avaliable"));
+        }));
   }
 }
